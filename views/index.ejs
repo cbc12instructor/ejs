@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title><%= title %> - <%= name %></title>
+</head>
+<body>
+	<%- include('partials/page2') %>
+
+	<h1><%= name %> EJS Template Example</h1>
+
+	<%- include('partials/menu') %>
+
+	<div style="float: left; background-color:#888;margin-left:20px;width:400px;">
+		<%- 10 + 5 %>
+		<%- 'Hello' + ' ' + 'World' %>
+		<%= '<script>alert("hello")</script>' %>
+		
+		<% if ( false ) {  %>
+			<h2>This is neat</h2>
+		<% } %>	
+
+		<% loggedIn = false; if ( loggedIn ) { %>
+			<h3>You are logged in as <%- loggedIn %>
+		<% } else { %>
+			<h3><a href="/login">Please log in</a></h3>
+		<% }  %>
+
+		<ul>
+			<% for ( let i = 0; i < 10; i++ ) { %>
+				<li><%- i %></li>
+			<% } %>
+		</ul>
+	</div>
+</body>
+</html>
